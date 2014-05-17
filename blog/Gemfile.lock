@@ -27,8 +27,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    amq-protocol (1.9.2)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    bunny (1.2.1)
+      amq-protocol (>= 1.9.2)
     erubis (2.7.0)
     hike (1.2.3)
     i18n (0.6.9)
@@ -83,6 +86,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bunny
   rails (= 4.1.1)
   spring
   sqlite3

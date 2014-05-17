@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      Publisher.publish("posts", @post.attributes)
       redirect_to @post, notice: 'Post was successfully created.'
     else
       render :new
@@ -33,6 +34,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
+      Publisher.publish("posts", @post.attributes)
       redirect_to @post, notice: 'Post was successfully updated.'
     else
       render :edit
