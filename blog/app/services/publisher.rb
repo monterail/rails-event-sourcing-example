@@ -1,6 +1,6 @@
 class Publisher
-  def self.publish(event, message = {})
-    x = channel.fanout(event)
+  def self.publish(exchange, message = {})
+    x = channel.fanout("blog.#{exchange}")
     x.publish(message.to_json)
   end
 
