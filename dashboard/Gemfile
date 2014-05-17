@@ -3,4 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 gem 'sqlite3'
 
+gem 'redis-rails'
+gem 'redis-namespace'
+
 gem 'spring',    group: :development
