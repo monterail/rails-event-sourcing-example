@@ -6,4 +6,6 @@ gem 'sqlite3'
 gem 'redis-rails'
 gem 'redis-namespace'
 
+gem 'sneakers'
+
 gem 'spring',    group: :development

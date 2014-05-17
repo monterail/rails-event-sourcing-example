@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = [{:title => "Hello"}, {:title => "World"}]
+    @posts = RecentPosts.list
   end
 end

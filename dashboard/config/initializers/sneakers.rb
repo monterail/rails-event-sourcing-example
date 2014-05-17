@@ -1,0 +1,1 @@
+Sneakers.configure({})
