@@ -15,3 +15,24 @@
     <% end %>
   </tbody>
 </table>
+
+
+<h2>Page Views</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Site</th>
+      <th>Views</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_views.each do |site, count| %>
+      <tr>
+        <td><%= site %></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

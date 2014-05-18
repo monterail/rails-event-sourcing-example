@@ -12,6 +12,12 @@ namespace :rabbitmq do
     ch.queue("dashboard.posts", durable: true).bind("blog.posts")
     ch.queue("admin.posts", durable: true).bind("blog.posts")
 
+    x = ch.fanout("admin.page_views")
+    ch.queue("dashboard.page_views", durable: true).bind("admin.page_views")
+
+    x = ch.fanout("blog.page_views")
+    ch.queue("dashboard.page_views", durable: true).bind("blog.page_views")
+
     conn.close
   end
 end

@@ -1,2 +1,2 @@
 web: rails s -p 5002
-worker: env WORKERS=PostsWorker rake sneakers:run
+worker: env WORKERS=PostsWorker,PageViewsWorker rake sneakers:run
