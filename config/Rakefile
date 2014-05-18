@@ -10,6 +10,7 @@ namespace :rabbitmq do
 
     x = ch.fanout("blog.posts")
     ch.queue("dashboard.posts", durable: true).bind("blog.posts")
+    ch.queue("admin.posts", durable: true).bind("blog.posts")
 
     conn.close
   end
