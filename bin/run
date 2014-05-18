@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+set -x
+
+cd blog
+bundle check || bundle install
+rake db:migrate
+cd ..
+
+cd dashboard
+bundle check || bundle install
+cd ..
+
+cd admin
+bundle check || bundle install
+rake db:migrate
+cd ..
+
+cd config
+bundle check || bundle install
+rake rabbitmq:setup
+cd ..
+
+which foreman > /dev/null 2>&1 || gem install foreman
+foreman start
