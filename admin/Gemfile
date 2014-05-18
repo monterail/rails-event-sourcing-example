@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+
+gem 'rails', '4.1.1'
+gem 'sqlite3'
+
+gem 'sneakers', "0.1.1.pre" # 0.0.7 does not support namespaced workers
+
+gem 'spring',      group: :development
