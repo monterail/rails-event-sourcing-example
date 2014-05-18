@@ -6,7 +6,7 @@ module Blog
     def work(raw_post)
       params = JSON.parse(raw_post)
 
-      Blog::Post.where(id: params["id"]).first_or_initialize do |post|
+      Blog::Post.where(id: params["id"]).first_or_initialize.tap do |post|
         post.title = params["title"]
         post.save!
       end
