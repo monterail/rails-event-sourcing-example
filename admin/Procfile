@@ -1,2 +1,2 @@
-web: rails s -p 5003
-worker: env WORKERS=Blog::PostsWorker rake sneakers:run
+web: bundle exec rails s -p 5003
+worker: env WORKERS=Blog::PostsWorker bundle exec rake sneakers:run

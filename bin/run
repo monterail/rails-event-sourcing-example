@@ -4,22 +4,26 @@ set -e
 set -x
 
 cd blog
+hash -r
 bundle check || bundle install
-rake db:migrate
+bundle exec rake db:migrate
 cd ..
 
 cd dashboard
+hash -r
 bundle check || bundle install
 cd ..
 
 cd admin
+hash -r
 bundle check || bundle install
-rake db:migrate
+bundle exec rake db:migrate
 cd ..
 
 cd config
+hash -r
 bundle check || bundle install
-rake rabbitmq:setup
+bundle exec rake rabbitmq:setup
 cd ..
 
 which foreman > /dev/null 2>&1 || gem install foreman
